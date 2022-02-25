@@ -1,0 +1,6 @@
+print("    1. Coke - Diet          £0.50")
+print("    2. Coke - Zero          £0.50")
+print("    3. Coke - Original      £0.50")
+print("    4. Fanta - Orange       £0.50")
+print("    5. Fanta - Strawberry   £0.50")
+print("    6. Fanta - Lemon        £0.50")
