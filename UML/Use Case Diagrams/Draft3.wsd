@@ -1,0 +1,23 @@
+@startuml Vending Machine Use Case Diagram
+left to right direction
+
+:Customer:
+
+rectangle "Vending Machine" {
+  :Customer: -- (Customer Journey)
+  (Customer Journey) ..> (Display Welcome\nMessage) : <<include>>
+  (Customer Journey) ..> (Display Menu) : <<include>>
+  (Display Menu) .down.> (Item Stock) : <<include>>
+  (Customer Journey) ..> (Item Selection) : <<include>>
+  (Item Selection) ..> (Item Stock) : <<include>>
+  (Item Selection) <.. (Selection Validation) : <<extend>>
+  (Customer Journey) ..> (Payment) : <<include>>
+  (Payment) .up.> (Payment Input\nValidation) : <<include>>
+  (Payment) .right.> (Payment Counting) : <<include>>
+  (Payment) <.. (Return Change) : <<extend>>
+  (Payment) ..> (Payment Confirmation) : <<include>>
+  (Customer Journey) ..> (Dispance Item) : <<include>>
+  (Dispance Item) ..> (Item Stock) : <<include>>
+}
+
+@enduml

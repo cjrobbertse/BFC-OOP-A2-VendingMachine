@@ -1,0 +1,34 @@
+@startuml
+
+left to right direction
+
+actor "Customer" as customer
+
+rectangle VendingMachine {
+    usecase "Welcome Customer" as welcome
+    usecase "Display Products" as display_products
+    usecase "Select Product" as select_product
+    usecase "Pay for Product" as pay_for_product
+    usecase "Confirm Purchase" as confirm_purchase
+    usecase "Validate Selection" as validate_selection
+    usecase "Confirm Selection" as confirm_selection
+    usecase "Display Product Price" as display_product_price
+    usecase "Display Remaining\n Amount To Pay" as display_remaining_amount_to_pay
+    usecase "Return Change" as return_change
+}
+
+customer -- welcome
+customer -- display_products
+customer -- select_product
+customer -- pay_for_product
+
+select_product -- validate_selection : <<include>>
+select_product -- confirm_selection : <<include>>
+
+pay_for_product -- display_product_price : <<include>>
+pay_for_product -- display_remaining_amount_to_pay : <<include>>
+pay_for_product -- return_change : <<extend>>
+pay_for_product -- confirm_purchase : <<include>>
+
+
+@enduml

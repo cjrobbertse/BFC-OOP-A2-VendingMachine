@@ -1,0 +1,15 @@
+@startuml Vending Machine Use Case Diagram
+left to right direction
+
+:Customer:
+
+rectangle "Vending Machine" {
+  :Customer: -- (View Menu)
+  (View Menu) ..> (Item Stock) : <<include>>
+  :Customer: -- (Select Item)
+  (Select Item) ..> (Item Stock) : <<include>>
+  :Customer: -- (Pay)
+  (Pay) <.. (Return Change) : <<extend>>
+}
+
+@enduml

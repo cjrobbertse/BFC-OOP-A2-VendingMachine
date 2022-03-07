@@ -1,0 +1,20 @@
+@startuml
+
+start
+
+:Display product price;
+
+repeat :Display remaining amount to pay;
+:Customer enters coin;
+repeat while (Enough money?) is (no) not (yes)
+
+if (Change required?) is (yes) then
+  :Display change returned;
+else (no)
+endif
+
+:Confirm purchase;
+
+stop
+
+@enduml

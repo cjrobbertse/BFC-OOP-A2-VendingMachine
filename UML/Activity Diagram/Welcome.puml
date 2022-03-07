@@ -1,0 +1,9 @@
+@startuml
+
+start
+
+:Display Welcome Message;
+
+stop
+
+@enduml

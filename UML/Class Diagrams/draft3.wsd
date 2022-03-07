@@ -1,0 +1,46 @@
+@startuml Vending Machine Class Diagram
+skinparam groupInheritance 2
+
+class VendingMachine {
+
+}
+
+
+class PaymentSystem {
+    coin_names: set
+    temporary_money_pot: dict
+    local_money_pot: dict
+    
+    insert_coin(coin_value: float)
+    check_status()
+    accept_payment()
+    return_change(): dict
+}
+
+note right of PaymentSystem::accept_payment
+    Transfer the coins from the temporary_money_pot to the local_money_pot.
+end note
+
+note right of PaymentSystem::return_change
+    Returns a dictionary of the change coins.
+end note
+
+
+VendingMachine <.. PaymentSystem
+
+
+
+
+
+class StockSystem {
+    productList: dict
+}
+
+
+class Product {
+    name: string
+    price: float
+
+}
+
+@enduml

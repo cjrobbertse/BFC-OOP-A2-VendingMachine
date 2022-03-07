@@ -1,0 +1,27 @@
+@startuml
+
+class VendingMachine {
+    products: {}
+}
+
+class Product {
+    name: string
+    price: float
+
+    get_product_name() : string
+    get_product_price() : int
+}
+
+note right of Product
+    A product is the name of an item with a price.
+end note
+
+class ProductQuantity {
+    product: Product
+    quantity: int
+
+    reduce_quantity_by_one()
+    out_of_stock() : boolean
+}
+
+@enduml

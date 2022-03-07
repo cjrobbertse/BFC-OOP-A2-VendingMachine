@@ -1,0 +1,50 @@
+@startuml
+
+left to right direction
+
+:Customer:
+:Terminal Out:
+:Terminal In:
+
+rectangle VendingMachine {
+    (Display Welcome Message)
+    (Display Product Menu)
+    (Enter Product ID)
+    (Display Product Price)
+    (Pay For Product)
+    (Enter Coin)
+    (Request More Money)
+    (Return Change)
+    (Confirm Purchase)
+}
+
+Customer -- (Display Welcome Message)
+(Display Welcome Message) -- :Terminal Out:
+
+Customer -- (Display Product Menu)
+(Display Product Menu) -- :Terminal Out:
+
+Customer -- (Enter Product ID)
+(Enter Product ID) -- :Terminal In:
+
+Customer -- (Display Product Price)
+(Display Product Price) -- :Terminal Out:
+
+Customer -- (Pay For Product)
+(Pay For Product) .. (Enter Coin) : <<include>>
+(Pay For Product) .. (Request More Money) : <<extend>>
+(Pay For Product) .. (Return Change) : <<extend>>
+
+Customer -- (Enter Coin)
+(Enter Coin) -- :Terminal In:
+
+Customer -- (Request More Money)
+(Request More Money) -- :Terminal Out:
+
+Customer -- (Return Change)
+(Return Change) -- :Terminal Out:
+
+Customer -- (Confirm Purchase)
+(Confirm Purchase) -- :Terminal Out:
+
+@enduml

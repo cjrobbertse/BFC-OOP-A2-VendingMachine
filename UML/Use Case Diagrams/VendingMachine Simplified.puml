@@ -1,0 +1,34 @@
+@startuml
+
+left to right direction
+
+:Customer:
+
+rectangle VendingMachine {
+    (Welcome)
+    (Display Products)
+    (Select Product)
+    (Pay for Product)
+    (Confirm Purchase)
+    (Validate Selection)
+    (Confirm Selection)
+    (Display Product Price)
+    (Display Remaining\n Amount To Pay)
+    (Return Change)
+}
+
+Customer -- (Welcome)
+Customer -- (Display Products)
+Customer -- (Select Product)
+Customer -- (Pay for Product)
+
+(Select Product) ..> (Validate Selection) : <<include>>
+(Select Product) ..> (Confirm Selection) : <<include>>
+
+(Pay for Product) ..> (Display Product Price) : <<include>>
+(Pay for Product) ..> (Display Remaining\n Amount To Pay) : <<include>>
+(Pay for Product) <.. (Return Change) : <<extend>>
+(Pay for Product) ..> (Confirm Purchase) : <<include>>
+
+
+@enduml

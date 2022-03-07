@@ -1,0 +1,26 @@
+@startuml
+
+class Product {
+    id: int
+    name: string
+    price: float
+
+    get_id() : int
+    get_price() : int
+    get_name() : string
+}
+
+class ProductStock {
+    product_id : int
+    quantity : int
+
+    get_stock() : int
+}
+
+
+
+class VendingMachine {
+
+}
+
+@enduml

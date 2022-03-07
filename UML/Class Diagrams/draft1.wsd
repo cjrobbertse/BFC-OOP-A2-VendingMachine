@@ -1,0 +1,18 @@
+@startuml Vending Machine Class Diagram
+
+abstract class Coin
+
+Coin : value: float
+
+Coin <|-- OnePenny
+Coin <|-- TwoPence
+Coin <|-- FivePence
+Coin <|-- TenPence
+Coin <|-- TwentyPence
+Coin <|-- FiftyPence
+Coin <|-- OnePound
+Coin <|-- TwoPounds
+
+OnePenny : value: float
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+
+class VendingMachine {
+    products: dict
+    coins: dict
+
+    display_welcome_message()
+    display_menu()
+
+    get_product_price(product_name) : float
+    get_product_names() : list
+    get_product_stock() : int
+    get_coin_change(change_value : float) : dict
+    add_coins(coin_dict : dict)
+}
+
+note right of VendingMachine::products
+    {name<string>: {price<float>, quantity<int>}}
+end note
+
+note right of VendingMachine::coins
+    {value<float>: quantity<int>}
+end note
+
+note right of VendingMachine::get_coin_change
+    {value<float>: quantity<int>}
+end note
+
+note right of VendingMachine::add_coins
+    {value<float>: quantity<int>}
+end note
+
+@enduml

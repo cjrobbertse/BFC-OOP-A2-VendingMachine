@@ -1,0 +1,25 @@
+@startuml
+
+left to right direction
+
+:Customer:
+:VendingMachine:
+
+(Welcome Message)
+(Product Menu)
+(Product Selection)
+
+Customer --> (Welcome Message)
+(Welcome Message) <-- VendingMachine
+
+Customer --> (Product Menu)
+(Product Menu) <-- VendingMachine
+
+Customer --> (Product Selection)
+(Product Selection) <-- VendingMachine
+
+
+
+
+
+@enduml

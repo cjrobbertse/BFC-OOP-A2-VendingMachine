@@ -1,0 +1,36 @@
+@startuml Vending Machine Class Diagram
+
+abstract class CoinPot
+
+class CoinPot {
+    -coin_names : set
+    +coins : dict
+    +sum()
+}
+
+CoinPot <|-- PurchaseCoinPot
+CoinPot <|-- InternalCoinPot
+
+class PurchaseCoinPot {
+
+}
+
+class InternalCoinPot {
+    +withdraw_amount(amount : float) : 
+}
+
+note left of InternalCoinPot::withdraw_amount
+    This method will calculate and remove the 
+    necessary coins from the InternalCoinPot
+    to return the total <i>amount</i> of change.
+
+    This method will be called when there 
+    is change required to be returned.
+
+end note
+
+note left
+    create diagram for coins only being dictionaries, not classes.
+end note
+
+@enduml

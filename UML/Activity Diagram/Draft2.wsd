@@ -1,0 +1,22 @@
+@startuml Vending Machine Activity
+
+start
+
+repeat 
+    :Display Welcome Message;
+    :Display Menu;
+    :
+    :Customer Selects Product;
+    :Customer Pays For Product;
+
+    if (Change is needed?) then (yes)
+        :return change;
+    else (no)
+    endif
+
+    :Confirm Purchase;
+    :Dispense Product;
+
+repeat while ()
+
+@enduml

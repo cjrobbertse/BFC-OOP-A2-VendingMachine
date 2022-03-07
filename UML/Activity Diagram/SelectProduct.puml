@@ -1,0 +1,11 @@
+@startuml
+
+start
+
+repeat :Customer enters product ID from menu selection;
+repeat while (Valid product ID?) is (no) not (yes)
+:Confirm product selection;
+
+stop
+
+@enduml

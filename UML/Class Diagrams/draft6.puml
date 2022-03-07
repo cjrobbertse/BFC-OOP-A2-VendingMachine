@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class VendingMachine {
+    money_inventory: MoneyInventory
+    product_inventory: ProductInventory
+
+    request_money()
+    take_money()
+    give_change()
+    give_product()
+}
+
+class MoneyInventory {
+    coin_values: list
+    coin_quantities: list
+
+
+    coins: dict{coin_value<float>, quantity<int>}
+
+    add_coin(coin_value)
+    subtract_coin(coin_value)
+    get_change(change_value) : dict{coin_value<float>: quantity<int>}
+}
+
+class ProductInventory {
+    products: list
+
+    add_product(name<string>, price<float>)
+    remove_product(name<string>)
+    get_product_quantity(name<string>) : int
+    get_product_price(name<string>) : float
+}
+
+class Product {
+    name
+    price
+}
+
+class Coin {
+    value
+}
+
+class tempProducts {
+    product_names: list
+    product_prices: list
+    product_quantities: list
+
+    products: dict{name<string>: {price<float>, quantity<int>}}
+}
+
+
+
+@enduml

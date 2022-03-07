@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class VendingMachine {
+    - product_inventory: dict
+    - coin_inventory: dict
+    + display_welcome_message()
+    + display_menu()
+    - purchase(product)
+    - request_payment(price: float, payment_remaining: float)
+    - accept_payment(entered_coins: dict)
+    - return_change(required_change: float)
+    - dispense_product(product_id: int)
+}
+note left of VendingMachine::return_change
+    remove the coins from <i>coins</i> and print the total change and coins
+    returned
+end note
+note left of VendingMachine::dispense_product
+    remove the product from <i>products</i> and print that the product has
+    been dispensed
+end note
+
+class Coin {
+    + name: string
+    + value: float
+}
+
+class Product {
+    + id: int
+    + name: string
+    + price: float
+    + quantity: int
+}
+
+VendingMachine "1" -- "0..*" Product
+VendingMachine "1" -- "8" Coin
+
+@enduml
