@@ -1,5 +1,4 @@
 @startuml Vending Machine Activity
-
 start
 
 repeat 
